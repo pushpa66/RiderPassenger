@@ -1,10 +1,10 @@
-<ion-view title="Login" id="page14">
-  <ion-content padding="true" class="has-header">
+<ion-view title="Login" hide-back-button="true" id="page14">
+  <ion-content padding="true" style="background: url(../img/background.jpg) no-repeat center;background-size:cover;" class="has-header">
     <form id="login-form2" class="list">
       <ion-list id="login-list4">
         <label class="item item-input" id="login-input4">
           <span class="input-label">Phone Number</span>
-          <input type="text" placeholder="">
+          <input type="tel" placeholder="">
         </label>
         <label class="item item-input" id="login-input5">
           <span class="input-label">Password</span>
@@ -13,7 +13,7 @@
       </ion-list>
       <div class="spacer" style="height: 40px;"></div>
       <button id="login-button10" class="button button-stable  button-block">Log in</button>
-      <a href-inappbrowser="/signup" id="login-button11" class="button button-positive  button-block button-clear">Or create an account</a>
+      <a ui-sref="signup" id="login-button11" class="button button-energized  button-block button-clear">Or create an account</a>
     </form>
   </ion-content>
 </ion-view>
