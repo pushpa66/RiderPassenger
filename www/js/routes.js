@@ -10,7 +10,7 @@ angular.module('app.routes', [])
     
   
 
-  .state('menu.home', {
+      .state('menu.home', {
     url: '/homePage',
     views: {
       'side-menu21': {
@@ -96,7 +96,31 @@ angular.module('app.routes', [])
     controller: 'menuCtrl'
   })
 
-$urlRouterProvider.otherwise('/side-menu21/homePage')
+  .state('welcomePage1', {
+    url: '/welcomePage1',
+    templateUrl: 'templates/welcomePage1.html',
+    controller: 'welcomePage1Ctrl'
+  })
+
+  .state('welcomePage2', {
+    url: '/welcomePage2',
+    templateUrl: 'templates/welcomePage2.html',
+    controller: 'welcomePage2Ctrl'
+  })
+
+  .state('signup', {
+    url: '/signUpPage',
+    templateUrl: 'templates/signup.html',
+    controller: 'signupCtrl'
+  })
+
+  .state('login', {
+    url: '/loginPage',
+    templateUrl: 'templates/login.html',
+    controller: 'loginCtrl'
+  })
+
+$urlRouterProvider.otherwise('/welcomePage1')
 
   
 
