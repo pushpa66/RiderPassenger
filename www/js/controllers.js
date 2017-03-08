@@ -1,12 +1,13 @@
 angular.module('app.controllers', [])
 
-.controller('homeCtrl', ['$scope', '$compile',  '$ionicLoading', '$stateParams',function ($scope, $compile, $ionicLoading, $stateParams) {
+.controller('homeCtrl', ['$scope', '$compile', '$ionicLoading', '$stateParams',function ($scope, $compile, $ionicLoading, $stateParams) {
 
   $scope.text = "Hello I am scope";
   var marker;
   $scope.initialize = function() {
 
     navigator.geolocation.getCurrentPosition(function (pos) {
+    //cordova.plugins.locationServices.geolocation.getCurrentPosition(function (pos) {
 
       $scope.myLatlng = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
       // alert(pos.coords.latitude+" "+pos.coords.longitude);
@@ -160,10 +161,35 @@ function ($scope, $stateParams) {
 
 }])
 
-.controller('loginCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
-// You can include any angular dependencies as parameters for this function
-// TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams) {
+.controller('loginCtrl', ['$scope', '$stateParams', '$http',function ($scope, $stateParams, $http) {
 
+  $scope.tel_number;
+  $scope.password;
+  $scope.user_type = 'customer';
+
+  $scope.data = [
+    {
+      'tel_number':$scope.tel_number,
+      'password':$scope.password,
+      'user_type':$scope.user_type
+    }
+  ];
+
+  $scope.login = function ($scope, $http) {
+    var dataObject = {
+      tel_number: $scope.tel_number,
+      password: $scope.password,
+      user_type :$scope.user_type
+    };
+    var res = $http.post('http://127.0.0.1:8000/api/register', dataObj);
+    res.success(function(data, status, headers, config) {
+      $scope.message = data;
+    });
+    res.error(function(data, status, headers, config) {
+      alert( "failure message: " + JSON.stringify({data: data}));
+    });
+    $scope.tel_number='';
+    $scope.password='';
+  }
 
 }])
