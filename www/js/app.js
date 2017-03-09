@@ -1,14 +1,8 @@
-// Ionic Starter App
 
-// angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
-// 'starter.services' is found in services.js
-// 'starter.controllers' is found in controllers.js
-angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.directives','app.services',])
+angular.module('app', ['ionic', 'app.directives','app.services'])
 
 .config(function($ionicConfigProvider, $sceDelegateProvider){
-  
+
 
   $sceDelegateProvider.resourceUrlWhitelist([ 'self','*://www.youtube.com/**', '*://player.vimeo.com/video/**']);
 
@@ -26,6 +20,8 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.directives
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+
+    //GoogleMaps.init('AIzaSyCGT-8Du3SwJCfdC7aNFqPheR_WTEv_dX0');
   });
 })
 
@@ -35,7 +31,7 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.directives
 */
 .directive('disableSideMenuDrag', ['$ionicSideMenuDelegate', '$rootScope', function($ionicSideMenuDelegate, $rootScope) {
     return {
-        restrict: "A",  
+        restrict: "A",
         controller: ['$scope', '$element', '$attrs', function ($scope, $element, $attrs) {
 
             function stopDrag(){
@@ -70,7 +66,7 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.directives
       attrs.$observe('hrefInappbrowser', function(val){
         href = val;
       });
-      
+
       element.bind('click', function (event) {
 
         window.open(href, '_system', 'location=yes');

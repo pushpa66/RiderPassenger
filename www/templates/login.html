@@ -1,19 +1,25 @@
-<ion-view title="Login" hide-back-button="true" id="page14">
+<ion-view ng-controller="loginCtrl" title="Login" hide-back-button="true" id="page14">
   <ion-content padding="true" style="background: url(img/background.jpg) no-repeat center;background-size:cover;" class="has-header">
-    <form id="login-form2" class="list">
+    <form id="login-form2" class="list" name="loginForm" ng-submit="login()">
       <ion-list id="login-list4">
         <label class="item item-input" id="login-input4">
           <span class="input-label">Phone Number</span>
-          <input type="tel" placeholder="">
+          <input type="tel"  placeholder="" ng-model="data.tel_number">
         </label>
+
+        <span ng-show="!success">Success</span>
+
         <label class="item item-input" id="login-input5">
           <span class="input-label">Password</span>
-          <input type="password" placeholder="">
+          <input type="password" placeholder="" ng-model="data.password">
         </label>
+
+        <span ng-show="!success">Success</span>
       </ion-list>
       <div class="spacer" style="height: 40px;"></div>
-      <button id="login-button10" class="button button-stable  button-block" ng-click="login()">Log in</button>
-      <a ui-sref="signup" id="login-button11" class="button button-energized  button-block button-clear">Or create an account</a>
+      <button id="login-button10" class="button button-stable  button-block" type="submit">Log in</button>
+      <a ui-sref="menu.home" id="login-button11" class="button button-energized  button-block button-clear">Or create an account</a>
+      <span ng-show="success">Success</span>
     </form>
   </ion-content>
 </ion-view>
