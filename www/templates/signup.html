@@ -1,22 +1,22 @@
 <ion-view title="Signup" hide-back-button="true" id="page13">
   <ion-content padding="true" style="background: url(img/background.jpg) no-repeat center;background-size:cover;" class="has-header">
-    <form id="signup-form1" class="list">
+    <form id="signup-form1" class="list" ng-submit="signup()">
       <ion-list id="signup-list3">
         <label class="item item-input" id="signup-input1">
           <span class="input-label">Name</span>
-          <input type="text" placeholder="">
+          <input type="text" placeholder="" ng-model="data.name">
         </label>
         <label class="item item-input" id="signup-input6">
           <span class="input-label">Phone Number</span>
-          <input type="tel" placeholder="">
+          <input type="tel" placeholder="" ng-model="data.tel_number">
         </label>
         <label class="item item-input" id="signup-input2">
           <span class="input-label">Email</span>
-          <input type="email" placeholder="">
+          <input type="email" placeholder="" ng-model="data.email">
         </label>
         <label class="item item-input" id="signup-input3">
           <span class="input-label">Password</span>
-          <input type="password" placeholder="">
+          <input type="password" placeholder="" ng-model="data.password">
         </label>
       </ion-list>
       <button id="signup-button9" class="button button-stable  button-block">Sign up</button>
