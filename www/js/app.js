@@ -1,5 +1,5 @@
 
-angular.module('app', ['ionic', 'app.directives','app.services','ngCordova'])
+angular.module('app', ['ionic', 'app.directives','ngCordova'])
 
 .config(function($ionicConfigProvider, $sceDelegateProvider, $httpProvider){
 

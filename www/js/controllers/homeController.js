@@ -2,6 +2,7 @@
 angular.module('app')
 .controller('homeCtrl', ['$scope','$state','$ionicLoading','$cordovaGeolocation',
   function($scope, $state, $ionicLoading, $cordovaGeolocation) {
+
   var options = {timeout: 10000, enableHighAccuracy: true};
 
   $scope.initialize = function () {
