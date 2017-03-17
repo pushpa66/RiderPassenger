@@ -11,7 +11,7 @@ angular.module('app', ['ionic', 'app.directives','ngCordova'])
 
 })
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, GoogleMaps) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -25,6 +25,8 @@ angular.module('app', ['ionic', 'app.directives','ngCordova'])
     }
 
     //GoogleMaps.init('AIzaSyCGT-8Du3SwJCfdC7aNFqPheR_WTEv_dX0');
+    // ionic.platform.ready(GoogleMaps.init());
+    //GoogleMaps.init();
   });
 })
 
