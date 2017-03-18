@@ -26,10 +26,13 @@ angular.module('app', ['ionic', 'app.directives','ngCordova'])
 
     //GoogleMaps.init('AIzaSyCGT-8Du3SwJCfdC7aNFqPheR_WTEv_dX0');
     // ionic.platform.ready(GoogleMaps.init());
-    //GoogleMaps.init();
+    // GoogleMaps.init();
   });
 })
-
+.constant('SERVER', {
+  //url: 'https://myextsite.com/api/public/index.php/v1'
+  url: 'v1'
+})
 /*
   This directive is used to disable the "drag to open" functionality of the Side-Menu
   when you are dragging a Slider component.

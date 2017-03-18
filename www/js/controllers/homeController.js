@@ -3,8 +3,9 @@ angular.module('app')
 .controller('homeCtrl', ['$scope','$state','$ionicLoading','$cordovaGeolocation','GoogleMaps',
   function($scope, $state, $ionicLoading, $cordovaGeolocation, GoogleMaps) {
 
+  $scope.apikey = 'AIzaSyCGT-8Du3SwJCfdC7aNFqPheR_WTEv_dX0';
   $scope.init = function () {
-    GoogleMaps.init();
+    GoogleMaps.init($scope.apikey);
   };
   $scope.centerOnMe = function () {
     GoogleMaps.centerOnMe();
